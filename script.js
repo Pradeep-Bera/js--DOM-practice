@@ -8,18 +8,24 @@
 
 // });
 
-let newPost = document.getElementById('newPost');
-let button = document.querySelector('.add');
+// let newPost = document.querySelector('#newPost').value;
+let button = document.querySelector('#add');
+let ul = document.getElementById('allPost');
+
+button.addEventListener('click', list);
+// let newPost = document.querySelector('#newPost');
 
 
-button.addEventListener('click', listItem);
 
-function listItem() {
-    let blogTitle = newPost.value
+function list() {
+    let post = newPost.value
     let li = document.createElement('li');
     let p = document.createElement('p');
-    p.innerHTML = blogTitle;
+    p.innerHTML = post;
     li.appendChild(p);
-    let allPost = document.getElementById('allPost');
-    allPost.appendChild(li);
-};
+    ul.appendChild(li);
+    document.querySelector('#newPost').value = '';
+
+}
+
+
